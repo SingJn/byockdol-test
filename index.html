@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Range Sliders</title>
+    <style>
+        :root{
+            --left-value:120;
+            --right-value:120;
+            --up-value:120;
+            --down-value:120;
+        }
+
+        @font-face {
+        font-family : 'SN벽돌';
+        src : url(SN벽돌17test4VF.ttf)
+        }
+
+        body {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        .slidecontainer {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .slider {
+            -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+            width: 100%; /* 슬라이더 길이 */
+            height: 2px; /* 슬라이더 두께 */
+            border-radius: 0px; /* 슬라이더 모서리를 약간 둥글게 */
+            background: #ccc; /* 슬라이더 색상 */
+            outline: none; /* 슬라이더 테두리 없이 */
+        }
+
+        /* 슬라이더 핸들(클릭해서 드래그하는 부분) 커스텀 
+        (Chrome, Opera, Safari, Edge 브라우저를 위해서는 -webkit-을,
+        Firefox 브라우저를 위해서는 -moz- 를 사용하세요 */
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+            appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+            width: 15px; /* 슬라이더 핸들 길이 */
+            height: 15px; /* 슬라이더 핸들 높이 */
+            border-radius: 100%; /* 핸들 모양을 원모양으로 만들기 위함 */
+            background: rgb(0, 0, 0); /* 슬라이더 핸들 색상 */
+            cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
+        }
+
+        .textbox {
+            font-size: 5rem;
+            font-family: 'SN벽돌';
+            word-break: keep-all;
+            font-variation-settings: "HCoU" var(--up-value), "HCoD" var(--down-value), "VCoR" var(--right-value), "VCoL" var(--left-value), "wdth" 270;
+        }
+    </style>
+</head>
+<body>
+    <div class="textbox">글꼴이란 서로 어울리도록 일관성을 갖춘 글자(글리프)의 모둠을 일컫는 말. 흔히 글씨체, 영어로는 폰트.</div>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="120" value="120" class="slider" id="leftThickness">
+        <p>Left Thickness: <span id="leftThicknessValue"></span></p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="120" value="120" class="slider" id="rightThickness">
+        <p>Right Thickness: <span id="rightThicknessValue"></span></p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="120" value="120" class="slider" id="upThickness">
+        <p>Up Thickness: <span id="upThicknessValue"></span></p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="120" value="120" class="slider" id="downThickness">
+        <p>Down Thickness: <span id="downThicknessValue"></span></p>
+    </div>
+
+    <script>
+        var leftSlider = document.getElementById("leftThickness");
+        var leftOutput = document.getElementById("leftThicknessValue");
+        leftOutput.innerHTML = leftSlider.value
+        
+        leftSlider.oninput = function() {
+            leftOutput.innerHTML = this.value;
+            document.documentElement.style.setProperty("--left-value", this.value)
+        }
+
+        var rightSlider = document.getElementById("rightThickness");
+        var rightOutput = document.getElementById("rightThicknessValue");
+        rightOutput.innerHTML = rightSlider.value
+        
+        rightSlider.oninput = function() {
+            rightOutput.innerHTML = this.value;
+            document.documentElement.style.setProperty("--right-value", this.value)
+        }
+
+        var upSlider = document.getElementById("upThickness");
+        var upOutput = document.getElementById("upThicknessValue");
+        upOutput.innerHTML = upSlider.value
+        
+        upSlider.oninput = function() {
+            upOutput.innerHTML = this.value;
+            document.documentElement.style.setProperty("--up-value", this.value)
+        }
+
+        var downSlider = document.getElementById("downThickness");
+        var downOutput = document.getElementById("downThicknessValue");
+        downOutput.innerHTML = downSlider.value
+        
+        downSlider.oninput = function() {
+            downOutput.innerHTML = this.value;
+            document.documentElement.style.setProperty("--down-value", this.value)
+        }
+
+        var fontSelector = document.querySelector('.textbox');
+        console.log(getComputedStyle(fontSelector).fontVariationSettings)
+    </script>
+</body>
+</html>
