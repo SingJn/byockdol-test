@@ -48,12 +48,10 @@
             border-radius: 100%; /* 핸들 모양을 원모양으로 만들기 위함 */
             background: rgb(0, 0, 0); /* 슬라이더 핸들 색상 */
             cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
-            transition-duration: .3s;
         }
 
         .slider::-webkit-slider-thumb:active { 
             background: rgb(255, 61, 43); /* 슬라이더 핸들 색상 */
-            transition-duration: .3s;
         }
 
         .textbox {
@@ -115,7 +113,11 @@
         leftSlider.oninput = function() {
             leftOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--left-value", this.value)
+            document.getElementById('leftThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
+        leftSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('leftThicknessValue').style.color = 'black';
+        });
 
         var rightSlider = document.getElementById("rightThickness");
         var rightOutput = document.getElementById("rightThicknessValue");
@@ -124,7 +126,11 @@
         rightSlider.oninput = function() {
             rightOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--right-value", this.value)
+            document.getElementById('rightThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
+        rightSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('rightThicknessValue').style.color = 'black';
+        });
 
         var upSlider = document.getElementById("upThickness");
         var upOutput = document.getElementById("upThicknessValue");
@@ -133,7 +139,11 @@
         upSlider.oninput = function() {
             upOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--up-value", this.value)
+            document.getElementById('upThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
+        upSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('upThicknessValue').style.color = 'black';
+        });
 
         var downSlider = document.getElementById("downThickness");
         var downOutput = document.getElementById("downThicknessValue");
@@ -142,7 +152,11 @@
         downSlider.oninput = function() {
             downOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--down-value", this.value)
+            document.getElementById('downThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
+        downSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('downThicknessValue').style.color = 'black';
+        });
 
         var fontSelector = document.querySelector('.textbox');
         console.log(getComputedStyle(fontSelector).fontVariationSettings)
