@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta charset="utf-8" name="viewport" content="width=device-width, inital-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>byockdol-test</title>
     <style>
+        
         :root{
             --left-value:120;
             --right-value:120;
@@ -18,7 +22,8 @@
 
         body {
             margin: 0 auto;
-            width: 90%;
+            width: 90%; 
+            font-family: 'Roboto', sans-serif;
         }
 
         .slidecontainer {
@@ -70,7 +75,7 @@
         }
 
         .valueWrapper {
-            width: 24rem;
+            width: 12rem;
             display: flex;
             justify-content: space-between;
         }
@@ -85,19 +90,19 @@
     <div class="textbox">글꼴이란 서로 어울리도록 일관성을 갖춘 글자(글리프)의 모둠을 일컫는 말. 흔히 글씨체, 영어로는 폰트.</div>
     <div class="slidecontainer">
         <div class="slideWrapper">
-            <span class="valueWrapper">Left Thickness<span id="leftThicknessValue"></span></span>
+            <span class="valueWrapper">Left<span id="leftThicknessValue"></span></span>
             <input type="range" min="0" max="120" value="120" class="slider" id="leftThickness">
         </div>
         <div class="slideWrapper">
-            <span class="valueWrapper">Right Thickness<span id="rightThicknessValue"></span></span>
+            <span class="valueWrapper">Right<span id="rightThicknessValue"></span></span>
             <input type="range" min="0" max="120" value="120" class="slider" id="rightThickness">
         </div>
         <div class="slideWrapper">
-            <span class="valueWrapper">Up Thickness<span id="upThicknessValue"></span></span>
+            <span class="valueWrapper">Up<span id="upThicknessValue"></span></span>
             <input type="range" min="0" max="120" value="120" class="slider" id="upThickness">
         </div>
         <div class="slideWrapper">
-            <span class="valueWrapper">Down Thickness<span id="downThicknessValue"></span></span>
+            <span class="valueWrapper">Down<span id="downThicknessValue"></span></span>
             <input type="range" min="0" max="120" value="120" class="slider" id="downThickness">
         </div>
         
@@ -118,6 +123,9 @@
         leftSlider.addEventListener('mouseup', (event) => {
             document.getElementById('leftThicknessValue').style.color = 'black';
         });
+        leftSlider.addEventListener('touchend', (event) => {
+            document.getElementById('leftThicknessValue').style.color = 'black';
+        });
 
         var rightSlider = document.getElementById("rightThickness");
         var rightOutput = document.getElementById("rightThicknessValue");
@@ -129,6 +137,9 @@
             document.getElementById('rightThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
         rightSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('rightThicknessValue').style.color = 'black';
+        });
+        rightSlider.addEventListener('touchend', (event) => {
             document.getElementById('rightThicknessValue').style.color = 'black';
         });
 
@@ -144,6 +155,9 @@
         upSlider.addEventListener('mouseup', (event) => {
             document.getElementById('upThicknessValue').style.color = 'black';
         });
+        upSlider.addEventListener('touchend', (event) => {
+            document.getElementById('upThicknessValue').style.color = 'black';
+        });
 
         var downSlider = document.getElementById("downThickness");
         var downOutput = document.getElementById("downThicknessValue");
@@ -155,6 +169,9 @@
             document.getElementById('downThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
         downSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('downThicknessValue').style.color = 'black';
+        });
+        downSlider.addEventListener('touchend', (event) => {
             document.getElementById('downThicknessValue').style.color = 'black';
         });
 
