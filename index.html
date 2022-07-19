@@ -131,6 +131,9 @@
         leftSlider.addEventListener('touchend', (event) => {
             document.getElementById('leftThicknessValue').style.color = 'black';
         });
+        leftSlider.addEventListener('mouseout', (event) => {
+            document.getElementById('leftThicknessValue').style.color = 'black';
+        });
 
         var rightSlider = document.getElementById("rightThickness");
         var rightOutput = document.getElementById("rightThicknessValue");
@@ -145,6 +148,9 @@
             document.getElementById('rightThicknessValue').style.color = 'black';
         });
         rightSlider.addEventListener('touchend', (event) => {
+            document.getElementById('rightThicknessValue').style.color = 'black';
+        });
+        leftSlider.addEventListener('mouseout', (event) => {
             document.getElementById('rightThicknessValue').style.color = 'black';
         });
 
@@ -163,6 +169,9 @@
         upSlider.addEventListener('touchend', (event) => {
             document.getElementById('upThicknessValue').style.color = 'black';
         });
+        leftSlider.addEventListener('mouseout', (event) => {
+            document.getElementById('upThicknessValue').style.color = 'black';
+        });
 
         var downSlider = document.getElementById("downThickness");
         var downOutput = document.getElementById("downThicknessValue");
@@ -177,6 +186,9 @@
             document.getElementById('downThicknessValue').style.color = 'black';
         });
         downSlider.addEventListener('touchend', (event) => {
+            document.getElementById('downThicknessValue').style.color = 'black';
+        });
+        leftSlider.addEventListener('mouseout', (event) => {
             document.getElementById('downThicknessValue').style.color = 'black';
         });
 
