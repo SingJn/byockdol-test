@@ -13,6 +13,7 @@
             --right-value:120;
             --up-value:120;
             --down-value:120;
+            --width-value:0;
         }
 
         @font-face {
@@ -70,7 +71,7 @@
             line-height: 4.5rem;
             font-family: 'SN벽돌';
             word-break: keep-all;
-            font-variation-settings: "HCoU" var(--up-value), "HCoD" var(--down-value), "VCoR" var(--right-value), "VCoL" var(--left-value), "wdth" 270;
+            font-variation-settings: "HCoU" var(--up-value), "HCoD" var(--down-value), "VCoR" var(--right-value), "VCoL" var(--left-value), "wdth" var(--width-value);
         }
 
         .slideWrapper {
@@ -109,6 +110,10 @@
         <div class="slideWrapper">
             <span class="valueWrapper">Down<span id="downThicknessValue"></span></span>
             <input type="range" min="0" max="120" value="120" class="slider" id="downThickness">
+        </div>
+        <div class="slideWrapper">
+            <span class="valueWrapper">Width<span id="widthValue"></span></span>
+            <input type="range" min="0" max="570" value="0" class="slider" id="width">
         </div>
         
         
@@ -150,7 +155,7 @@
         rightSlider.addEventListener('touchend', (event) => {
             document.getElementById('rightThicknessValue').style.color = 'black';
         });
-        leftSlider.addEventListener('mouseout', (event) => {
+        rightSlider.addEventListener('mouseout', (event) => {
             document.getElementById('rightThicknessValue').style.color = 'black';
         });
 
@@ -169,7 +174,7 @@
         upSlider.addEventListener('touchend', (event) => {
             document.getElementById('upThicknessValue').style.color = 'black';
         });
-        leftSlider.addEventListener('mouseout', (event) => {
+        upSlider.addEventListener('mouseout', (event) => {
             document.getElementById('upThicknessValue').style.color = 'black';
         });
 
@@ -188,8 +193,27 @@
         downSlider.addEventListener('touchend', (event) => {
             document.getElementById('downThicknessValue').style.color = 'black';
         });
-        leftSlider.addEventListener('mouseout', (event) => {
+        downSlider.addEventListener('mouseout', (event) => {
             document.getElementById('downThicknessValue').style.color = 'black';
+        });
+
+        var widthSlider = document.getElementById("width");
+        var widthOutput = document.getElementById("widthValue");
+        widthOutput.innerHTML = widthSlider.value
+        
+        widthSlider.oninput = function() {
+            widthOutput.innerHTML = this.value;
+            document.documentElement.style.setProperty("--width-value", this.value)
+            document.getElementById('widthValue').style.color = 'rgb(255, 61, 43)';
+        }
+        widthSlider.addEventListener('mouseup', (event) => {
+            document.getElementById('widthValue').style.color = 'black';
+        });
+        widthSlider.addEventListener('touchend', (event) => {
+            document.getElementById('widthValue').style.color = 'black';
+        });
+        widthSlider.addEventListener('mouseout', (event) => {
+            document.getElementById('widthValue').style.color = 'black';
         });
 
         var fontSelector = document.querySelector('.textbox');
