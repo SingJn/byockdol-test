@@ -27,6 +27,8 @@
             margin: 0 0 0 0;
             width: 100%; 
             font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--text-backColor);
         }
 
         .slidecontainer {
@@ -137,7 +139,6 @@
 
         #white {
             background-color: white;
-            border: 0.01rem solid black;
         }
 
         #white:active {
@@ -179,11 +180,11 @@
         </div>
 
         <div class="buttonContainer">
+            <button id="white"></button>
+            <button id="black"></button>
             <button id="red"></button>
             <button id="green"></button>
             <button id="blue"></button>
-            <button id="white"></button>
-            <button id="black"></button>
         </div>
 
     </div>
@@ -195,17 +196,17 @@
         leftSlider.oninput = function() {
             leftOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--left-value", this.value)
-            document.getElementById('leftThicknessValue').style.color = 'rgb(255, 61, 43)';
+            // document.getElementById('leftThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
-        leftSlider.addEventListener('mouseup', (event) => {
-            document.getElementById('leftThicknessValue').style.color = 'black';
-        });
-        leftSlider.addEventListener('touchend', (event) => {
-            document.getElementById('leftThicknessValue').style.color = 'black';
-        });
-        leftSlider.addEventListener('mouseout', (event) => {
-            document.getElementById('leftThicknessValue').style.color = 'black';
-        });
+        // leftSlider.addEventListener('mouseup', (event) => {
+        //     document.getElementById('leftThicknessValue').style.color = 'black';
+        // });
+        // leftSlider.addEventListener('touchend', (event) => {
+        //     document.getElementById('leftThicknessValue').style.color = 'black';
+        // });
+        // leftSlider.addEventListener('mouseout', (event) => {
+        //     document.getElementById('leftThicknessValue').style.color = 'black';
+        // });
 
         var rightSlider = document.getElementById("rightThickness");
         var rightOutput = document.getElementById("rightThicknessValue");
@@ -214,17 +215,17 @@
         rightSlider.oninput = function() {
             rightOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--right-value", this.value)
-            document.getElementById('rightThicknessValue').style.color = 'rgb(255, 61, 43)';
+            // document.getElementById('rightThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
-        rightSlider.addEventListener('mouseup', (event) => {
-            document.getElementById('rightThicknessValue').style.color = 'black';
-        });
-        rightSlider.addEventListener('touchend', (event) => {
-            document.getElementById('rightThicknessValue').style.color = 'black';
-        });
-        rightSlider.addEventListener('mouseout', (event) => {
-            document.getElementById('rightThicknessValue').style.color = 'black';
-        });
+        // rightSlider.addEventListener('mouseup', (event) => {
+        //     document.getElementById('rightThicknessValue').style.color = 'black';
+        // });
+        // rightSlider.addEventListener('touchend', (event) => {
+        //     document.getElementById('rightThicknessValue').style.color = 'black';
+        // });
+        // rightSlider.addEventListener('mouseout', (event) => {
+        //     document.getElementById('rightThicknessValue').style.color = 'black';
+        // });
 
         var upSlider = document.getElementById("upThickness");
         var upOutput = document.getElementById("upThicknessValue");
@@ -233,17 +234,17 @@
         upSlider.oninput = function() {
             upOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--up-value", this.value)
-            document.getElementById('upThicknessValue').style.color = 'rgb(255, 61, 43)';
+            // document.getElementById('upThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
-        upSlider.addEventListener('mouseup', (event) => {
-            document.getElementById('upThicknessValue').style.color = 'black';
-        });
-        upSlider.addEventListener('touchend', (event) => {
-            document.getElementById('upThicknessValue').style.color = 'black';
-        });
-        upSlider.addEventListener('mouseout', (event) => {
-            document.getElementById('upThicknessValue').style.color = 'black';
-        });
+        // upSlider.addEventListener('mouseup', (event) => {
+        //     document.getElementById('upThicknessValue').style.color = 'black';
+        // });
+        // upSlider.addEventListener('touchend', (event) => {
+        //     document.getElementById('upThicknessValue').style.color = 'black';
+        // });
+        // upSlider.addEventListener('mouseout', (event) => {
+        //     document.getElementById('upThicknessValue').style.color = 'black';
+        // });
 
         var downSlider = document.getElementById("downThickness");
         var downOutput = document.getElementById("downThicknessValue");
@@ -252,17 +253,17 @@
         downSlider.oninput = function() {
             downOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--down-value", this.value)
-            document.getElementById('downThicknessValue').style.color = 'rgb(255, 61, 43)';
+            // document.getElementById('downThicknessValue').style.color = 'rgb(255, 61, 43)';
         }
-        downSlider.addEventListener('mouseup', (event) => {
-            document.getElementById('downThicknessValue').style.color = 'black';
-        });
-        downSlider.addEventListener('touchend', (event) => {
-            document.getElementById('downThicknessValue').style.color = 'black';
-        });
-        downSlider.addEventListener('mouseout', (event) => {
-            document.getElementById('downThicknessValue').style.color = 'black';
-        });
+        // downSlider.addEventListener('mouseup', (event) => {
+        //     document.getElementById('downThicknessValue').style.color = 'black';
+        // });
+        // downSlider.addEventListener('touchend', (event) => {
+        //     document.getElementById('downThicknessValue').style.color = 'black';
+        // });
+        // downSlider.addEventListener('mouseout', (event) => {
+        //     document.getElementById('downThicknessValue').style.color = 'black';
+        // });
 
         var widthSlider = document.getElementById("width");
         var widthOutput = document.getElementById("widthValue");
@@ -271,17 +272,17 @@
         widthSlider.oninput = function() {
             widthOutput.innerHTML = this.value;
             document.documentElement.style.setProperty("--width-value", this.value)
-            document.getElementById('widthValue').style.color = 'rgb(255, 61, 43)';
+            // document.getElementById('widthValue').style.color = 'rgb(255, 61, 43)';
         }
-        widthSlider.addEventListener('mouseup', (event) => {
-            document.getElementById('widthValue').style.color = 'black';
-        });
-        widthSlider.addEventListener('touchend', (event) => {
-            document.getElementById('widthValue').style.color = 'black';
-        });
-        widthSlider.addEventListener('mouseout', (event) => {
-            document.getElementById('widthValue').style.color = 'black';
-        });
+        // widthSlider.addEventListener('mouseup', (event) => {
+        //     document.getElementById('widthValue').style.color = 'black';
+        // });
+        // widthSlider.addEventListener('touchend', (event) => {
+        //     document.getElementById('widthValue').style.color = 'black';
+        // });
+        // widthSlider.addEventListener('mouseout', (event) => {
+        //     document.getElementById('widthValue').style.color = 'black';
+        // });
 
         document.getElementById("red").addEventListener('mouseup', (event) => {
             document.documentElement.style.setProperty("--text-color", 'white')
