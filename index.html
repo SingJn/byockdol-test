@@ -67,10 +67,10 @@
 
         .textbox {
             font-size: 3.5rem;
-            padding-top: 3.5%;
+            padding-top: 1.8%;
             padding-left: 2%;
             padding-right: 2%;
-            padding-bottom: 2.5%;
+            padding-bottom: 1.8%;
             line-height: 4.1rem;
             font-family: 'SN벽돌';
             word-break: keep-all;
@@ -310,6 +310,14 @@
 
         var fontSelector = document.querySelector('.textbox');
         console.log(getComputedStyle(fontSelector).fontVariationSettings)
+
+        document.documentElement.addEventListener('touchend', function (event) {
+     var now = (new Date()).getTime();
+     if (now - lastTouchEnd <= 300) {
+          event.preventDefault(); 
+        } lastTouchEnd = now; 
+    }, false);
+    
 
 
     </script>
