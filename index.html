@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta charset="utf-8" name="viewport" content="width=device-width, inital-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,7 +16,7 @@
             --down-value:120;
             --width-value:0;
             --text-color:black;
-            --text-backColor:rgb(254, 254, 254);
+            --text-backColor:white;
         }
 
         @font-face {
@@ -138,7 +139,7 @@
         }
 
         #white {
-            background-color: rgb(254, 254, 254);
+            background-color: white;
         }
 
         #white:active {
@@ -301,7 +302,7 @@
 
         document.getElementById("white").addEventListener('mouseup', (event) => {
             document.documentElement.style.setProperty("--text-color", 'black')
-            document.documentElement.style.setProperty("--text-backColor", 'rgb(254, 254, 254);')
+            document.documentElement.style.setProperty("--text-backColor", 'white')
         });
 
         document.getElementById("black").addEventListener('mouseup', (event) => {
