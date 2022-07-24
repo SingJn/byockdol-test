@@ -15,7 +15,7 @@
             --down-value:120;
             --width-value:0;
             --text-color:black;
-            --text-backColor:white;
+            --text-backColor:rgb(254, 254, 254);
         }
 
         @font-face {
@@ -138,7 +138,7 @@
         }
 
         #white {
-            background-color: white;
+            background-color: rgb(254, 254, 254);
         }
 
         #white:active {
@@ -301,7 +301,7 @@
 
         document.getElementById("white").addEventListener('mouseup', (event) => {
             document.documentElement.style.setProperty("--text-color", 'black')
-            document.documentElement.style.setProperty("--text-backColor", 'white')
+            document.documentElement.style.setProperty("--text-backColor", 'rgb(254, 254, 254);')
         });
 
         document.getElementById("black").addEventListener('mouseup', (event) => {
