@@ -15,8 +15,8 @@
             --up-value:120;
             --down-value:120;
             --width-value:0;
-            --text-color:black;
-            --text-backColor:white;
+            --text-color:white;
+            --text-backColor:black;
         }
 
         @font-face {
@@ -312,16 +312,7 @@
 
         var fontSelector = document.querySelector('.textbox');
         console.log(getComputedStyle(fontSelector).fontVariationSettings)
-
-        document.documentElement.addEventListener('touchend', function (event) {
-     var now = (new Date()).getTime();
-     if (now - lastTouchEnd <= 300) {
-          event.preventDefault(); 
-        } lastTouchEnd = now; 
-    }, false);
     
-
-
     </script>
 </body>
 </html>
